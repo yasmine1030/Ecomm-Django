@@ -1,0 +1,461 @@
+{% extends 'store/header.html' %}
+{% load static %}
+{% block content %}
+
+<!-- product-checkout07:12-->
+
+<body class="product-checkout checkout-cart">
+    <!-- main content -->
+    <div id="checkout" class="main-content">
+        <div class="wrap-banner">
+            <!-- breadcrumb -->
+            <nav class="breadcrumb-bg">
+                <div class="container no-index">
+                    <div class="breadcrumb">
+                        <ol>
+                            <li>
+                                <a href="#">
+                                    <span>Home</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span>Checkout</span>
+                                </a>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </nav>
+			
+            <!-- main -->
+            <div id="wrapper-site">
+                <div class="container">
+                    <div class="row">
+                        <div id="content-wrapper" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 onecol">
+                            <div id="main">
+                                <div class="cart-grid row">
+                                    <div class="col-md-9 check-info">
+                                        <div class="checkout-personal-step">
+                                            <h3 class="step-title h3 info">
+                                                <span class="step-number">1</span>PERSONAL INFORMATION
+
+                                                <span id="shipping-info"class="step-number">shipping-info</span>
+                                            </h3>
+                                        </div>
+                                        <div class="content">
+                                            <ul class="nav nav-inline">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" data-toggle="tab" href="#checkout-guest-form">
+                                                        ORDER AS A GUEST
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#checkout-login-form">
+                                                        SIGN IN
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div class="tab-content">
+                                                <div class="tab-pane fade in active show" id="checkout-guest-form" role="tabpanel">
+                                                    <form action="#" id="customer-form" class="js-customer-form" method="post">
+                                                        <div>
+                                                            <input type="hidden" name="id_customer" value="">
+                                                            <div class="form-group row">
+                                                                <input class="form-control" name="firstname" type="text" placeholder="Full name">
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <input class="form-control" name="email" type="email" placeholder="Email">
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <input class="form-control" name="email" type="email" placeholder="Phone">
+                                                            </div>
+                                                            <div class="desc-password">
+                                                                <span class="font-weight-bold">Create an account</span>
+                                                                <span>(optional)</span>
+                                                                <br>
+                                                                <span class="text-muted">And save time on your next order!</span>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="input-group js-parent-focus">
+                                                                    <input class="form-control js-child-focus" name="password" type="password" placeholder=" Password">
+                                                                </div>
+                                                            </div>
+                                                            <div class="hidden-comment">
+                                                                <div class="form-group row">
+                                                                    <input class="form-control" name="birthday" type="text" value="" placeholder=" Birthdate">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row check-input">
+                                                                <span class="custom-checkbox d-inline-flex">
+                                                                    <input class="check" name="optin" type="checkbox" value="1">
+                                                                    <label class="label-absolute">Receive offers from our partners</label>
+                                                                </span>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <span class="custom-checkbox d-inline-flex check-input">
+                                                                    <input class="check" name="newsletter" type="checkbox" value="1">
+                                                                    <label>Sign up for our newsletter
+                                                                        <br>
+                                                                        <em>You may unsubscribe at any moment. For that purpose,
+                                                                            please find our contact info in the legal notice.
+                                                                        </em>
+                                                                    </label>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix">
+                                                            <div class="row">
+                                                                <input type="hidden" name="submitCreate" value="1">
+
+                                                                <button class="continue btn btn-primary pull-xs-right" name="continue" data-link-action="register-new-customer" type="submit"
+                                                                    value="1">
+                                                                    Continue
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="tab-pane fade" id="checkout-login-form" role="tabpanel">
+                                                    <form id="login-form"  method="post" class="customer-form">
+                                                        <div id="user-info" >
+                                                            <input type="hidden" name="back" value="">
+                                                            <div class="form-group row">
+                                                                <input class="form-control" name="email" type="email" placeholder="Email">
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="input-group js-parent-focus">
+                                                                    <input class="form-control js-child-focus js-visible-password" name="password" type="password" placeholder="Password">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="forgot-password">
+                                                                    <a href="user-reset-password.html" rel="nofollow">
+                                                                        Forgot your password?
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix">
+                                                            <div class="row">
+                                                                <button id="form-button" class="continue btn btn-primary pull-xs-right " name="continue" data-link-action="sign-in" type="submit" value="1">
+                                                                    Continue
+                                                                </button>
+                                                                
+                                                                    <div class="d-none box-element hidden" id="payment-info">
+                                                                        <small>Paypal Option</small>
+                                                                    
+                                                                    <button id="make-payment" class="continue btn btn-primary pull-xs-right " name="makepayment" value="1">
+                                                                       Make payment
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="checkout-personal-step">
+                                            <h3 class="step-title h3">
+                                                <span class="step-number">2</span>Addresses
+                                            </h3>
+                                        </div>
+                                        <div class="checkout-personal-step">
+                                            <h3 class="step-title h3">
+                                                <span class="step-number">3</span>Shipping Method
+                                            </h3>
+                                        </div>
+                                        <div class="checkout-personal-step">
+                                            <h3 class="step-title h3">
+                                                <span class="step-number">4</span>Payment
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    <div class="cart-grid-right col-xs-12 col-lg-3">
+                                        <div class="cart-summary">
+                                            <div class="cart-detailed-totals">
+                                                <div class="cart-summary-products">
+                                                    <div class="summary-label">There are 3 item in your cart</div>
+                                                </div>
+                                                <div class="cart-summary-line" id="cart-subtotal-products">
+                                                    <span class="label js-subtotal">
+                                                        Total products:
+                                                    </span>
+                                                    <span class="value">£200.00</span>
+                                                </div>
+                                                <div class="cart-summary-line" id="cart-subtotal-shipping">
+                                                    <span class="label">
+                                                        Total Shipping:
+                                                    </span>
+                                                    <span class="value">Free</span>
+                                                    <div>
+                                                        <small class="value"></small>
+                                                    </div>
+                                                </div>
+                                                <div class="cart-summary-line cart-total">
+                                                    <span class="label">Total:</span>
+                                                    <span class="value">£200.00 (tax incl.)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="block-reassurance">
+                                            <ul>
+                                                <li>
+                                                    <div class="block-reassurance-item">
+                                                        <img src="img/product/check1.png" alt="Security policy (edit with Customer reassurance module)">
+                                                        <span>Security policy (edit with Customer reassurance module)</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="block-reassurance-item">
+                                                        <img src="img/product/check2.png" alt="Delivery policy (edit with Customer reassurance module)">
+                                                        <span>Delivery policy (edit with Customer reassurance module)</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="block-reassurance-item">
+                                                        <img src="img/product/check3.png" alt="Return policy (edit with Customer reassurance module)">
+                                                        <span>Return policy (edit with Customer reassurance module)</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer-one">
+        <div class="inner-footer">
+            <div class="container">
+                <div class="footer-top col-lg-12 col-xs-12">
+                    <div class=" row">
+                        <div class="nov-html col-lg-4 col-sm-12 col-xs-12">
+                            <div class="block">
+                                <div class="block-content">
+                                    <p class="logo-footer">
+                                        <img src="img/home/logo.png" alt="img">
+                                    </p>
+                                    <p class="content-logo">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt
+                                        ut labore et dolore magna aliqua. Ut enim ad minim
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="block">
+                                <div class="block-content">
+                                    <ul>
+                                        <li>
+                                            <a href="#">About Us</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Reasons to shop</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">What our customers say</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Meet the teaml</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Contact our buyers</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="block">
+                                <div class="block-content">
+                                    <p class="img-payment ">
+                                        <img class="img-fluid" src="img/home/payment-footer.png" alt="img">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nov-html col-lg-4 col-sm-6">
+                            <div class="block m-top">
+                                <div class="title-block">
+                                    Contact Us
+                                </div>
+                                <div class="block-content">
+                                    <div class="contact-us">
+                                        <div class="title-content">
+                                            <i class="fa fa-home" aria-hidden="true"></i>
+                                            <span>Address :</span>
+                                        </div>
+                                        <div class="content-contact address-contact">
+                                            <p>123 Suspendis matti, Visaosang Building VST District NY Accums, North American
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="contact-us">
+                                        <div class="title-content">
+                                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                                            <span>Email :</span>
+                                        </div>
+                                        <div class="content-contact mail-contact">
+                                            <p>support@domain.com</p>
+                                        </div>
+                                    </div>
+                                    <div class="contact-us">
+                                        <div class="title-content">
+                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                            <span>Hotline :</span>
+                                        </div>
+                                        <div class="content-contact phone-contact">
+                                            <p>+0012-345-67890</p>
+                                        </div>
+                                    </div>
+                                    <div class="contact-us">
+                                        <div class="title-content">
+                                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                            <span>Opening Hours :</span>
+                                        </div>
+                                        <div class="content-contact hours-contact">
+                                            <p>Monday - Sunday / 08.00AM- 19.00</p>
+                                            <span>(Except Holidays)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tiva-modules col-lg-4 col-md-6">
+                            <div class="block m-top">
+                                <div class="block-content">
+                                    <div class="title-block">Newsletter</div>
+                                    <div class="sub-title">Sign up to our newsletter to get the latest articles, lookbooks voucher codes direct
+                                        to your inbox
+                                    </div>
+                                    <div class="block-newsletter">
+                                        <form action="#" method="post">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" name="email" value="" placeholder="Enter Your Email">
+                                                <span class="input-group-btn">
+                                                    <button class="effect-btn btn btn-secondary " name="submitNewsletter" type="submit">
+                                                        <span>subscribe</span>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                            <input type="hidden" name="action" value="0">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block m-top1">
+                                <div class="block-content">
+                                    <div class="social-content">
+                                        <div class="title-block">
+                                            Follow us on
+                                        </div>
+                                        <div id="social-block">
+                                            <div class="social">
+                                                <ul class="list-inline mb-0 justify-content-end">
+                                                    <li class="list-inline-item mb-0">
+                                                        <a href="#" target="_blank">
+                                                            <i class="fa fa-facebook"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item mb-0">
+                                                        <a href="#" target="_blank">
+                                                            <i class="fa fa-twitter"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item mb-0">
+                                                        <a href="#" target="_blank">
+                                                            <i class="fa fa-google"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item mb-0">
+                                                        <a href="#" target="_blank">
+                                                            <i class="fa fa-instagram"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block m-top1">
+                                <div class="block-content">
+                                    <div class="payment-content">
+                                        <div class="title-block">
+                                            Payment accept
+                                        </div>
+                                        <div class="payment-image">
+                                            <img class="img-fluid" src="img/home/payment.png" alt="img">
+                                        </div>
+                                    </div>
+                                    <!-- Popup newsletter -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tiva-copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="text-center col-lg-12 ">
+                        <span>
+                            <a target="_blank" href="https://www.templateshub.net">Templates Hub</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        var shipping = '{{order.shipping}}'
+        var user = '{{request.user}}'
+        if(shipping == 'False'){
+                document.getElementById('shipping-info').innerHTML = '' 
+                console.log("rrrr")
+            }
+        if(user != 'AnonymousUser'){
+            console.log('undifiend')
+		   document.getElementById('login-form').innerHTML = ''
+
+        }
+        if(shipping == 'False' && user!= 'AnonymousUser'){
+            document.getElementById('form-wrapper').classList.add('d-none')
+            document.getElementById('payment-info').classList.remove('d-none')
+        }
+        var form = document.getElementById('login-form')
+        form.addEventListener('submit', function(e){
+            e.preventDefault()
+            console.log('form submitted...')
+            document.getElementById('form-button').classList.add('d-none')
+            document.getElementById('payment-info').classList.remove('d-none')
+    
+        })
+        document.getElementById('make-payment').addEventListener('click', function(e){
+	    submitFormData()
+        })
+
+        function submitFormData(){
+        console.log('payment button clicked')
+        var userFormData = {
+            'name':null,
+            'email':null,
+            'total':total,
+        }
+        var shippingInfo = {
+            'adress':null,
+            'city':null,
+            'state':null,
+            'zipcode':null,
+
+        }
+        }
+        </script>
+    
+    
+
+
+    {% endblock content %}

@@ -10,7 +10,7 @@ def store(request):
 		carItems = order.get_cart_items
 	else:
 		items = []
-		order = {'get_cart_total':0, 'get_cart_items':0}
+		order = {'get_cart_total':0, 'get_cart_items':0, 'shipping': False} 
 		carItems = order['get_cart_items']
 	products = Product.objects.all()
 
@@ -25,14 +25,23 @@ def cart(request):
 		carItems = order.get_cart_items		
 	else:
 		items = []
-		order = {'get_cart_total':0, 'get_cart_items':0}
+		order = {'get_cart_total':0, 'get_cart_items':0, 'shipping': False}
 		carItems = order['get_cart_items']
 	context = {'items':items, 'order':order, 'carItems':carItems}
 	return render(request, 'store/cart.html', context)
 
 def checkout(request):
-	context= {}
-	return render(request, 'store/home.html', context)
+	if request.user.is_authenticated:
+		customer = request.user.customer
+		order, created = Order.objects.get_or_create(customer=customer, complete=False)
+		items = order.orderitem_set.all()
+		carItems = order.get_cart_items		
+	else:
+		items = []
+		order = {'get_cart_total':0, 'get_cart_items':0, 'shipping': False}
+		carItems = order['get_cart_items']
+	context = {'items':items, 'order':order, 'carItems':carItems}
+	return render(request, 'store/checkout.html', context)
 
 def updateItem(request):
 	data = json.loads(request.body)
@@ -47,7 +56,7 @@ def updateItem(request):
 	if action == 'add':
 		orderItem.quantity = (orderItem.quantity + 1)
 	elif action == 'remove':
-		orderItem.quantity = (orderItem.quantiy - 1)
+		orderItem.quantity = (orderItem.quantity - 1)
 	orderItem.save()
 	if orderItem.quantity <= 0:
 		orderItem.delete()
