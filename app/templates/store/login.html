@@ -1,0 +1,91 @@
+{% extends 'store/header.html' %}
+{% load static %}
+{% load widget_tweaks %} 
+{% block content %}
+<html lang="en">
+    <body class="user-register blog">
+        <!-- main content -->
+        <div class="main-content">
+            <div class="wrap-banner">
+    
+                <!-- breadcrumb -->
+                <nav class="breadcrumb-bg">
+                    <div class="container no-index">
+                        <div class="breadcrumb">
+                            <ol>
+                                <li>
+                                    <a href="#">
+                                        <span>Home</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span>About us</span>
+                                    </a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+    
+            <!-- main -->
+            <div id="wrapper-site">
+                <div class="container">
+                    <div class="row">
+                        <div id="content-wrapper" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 onecol">
+                            <div id="main">
+                                <div id="content" class="page-content">
+                                    <div class="register-form text-center">
+                                        <h1 class="text-center title-page">Create Account</h1>
+                                        <form action="" id="customer-form" class="js-customer-form" method="post">
+                                            {% csrf_token %}
+                                            <div>
+                                               
+                                                    <input type="hidden" name="back" value="my-account">
+                                                    <div class="form-group no-gutters">
+                                                        <input class="form-control" name="username" type="text" placeholder=" Username">
+                                                    </div>
+                                                    <div class="form-group no-gutters">
+                                                        <div class="input-group js-parent-focus">
+                                                            <input class="form-control js-child-focus js-visible-password" name="password" type="password" value="" placeholder="Password">
+                                                        </div>
+                                                    </div>
+                                                    <div class="no-gutters text-center">
+                                                        <div class="forgot-password">
+                                                            <a href="user-reset-password.html" rel="nofollow">
+                                                                Forgot your password?
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix">
+                                                    <div class="text-center no-gutters">
+                                                        <input type="hidden" name="submitLogin" value="1">
+                                                        <button class="btn btn-primary" data-link-action="sign-in" type="submit">
+                                                            Sign in
+                                                        </button>
+                                                    </div>
+                                                </div>
+ 
+                                            </div>
+                                          
+                                        </form>
+                                        {% for message in messages %}
+                                        <p id="messages">{{message}}</p>
+                                    {% endfor %}	
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        {% endblock content %}
+        <!-- footer -->
+        
+ 
